@@ -71,7 +71,7 @@ void radix_sort(int *array, size_t size)
 	max_value = getMaxValue(array, size);
 	for (sig = 1; max_value / sig > 0; sig *= 10)
 	{
-		radix_counting_sort(array, size, sig, buff);
+		radixCountingSort(array, size, sig, buff);
 		print_array(array, size);
 	}
 
