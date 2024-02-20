@@ -35,16 +35,20 @@ typedef struct card_s
  * struct deck_node_s - Deck of card
  *
  * @card: Pointer to the card of the node
- * @pv: Pointer to the previous node of the list
- * @nxt: Pointer to the next node of the list
+ * @prev: Pointer to the previous node of the list
+ * @next: Pointer to the next node of the list
  */
 typedef struct deck_node_s
 {
 	const card_t *card;
-	struct deck_node_s *pv;
-	struct deck_node_s *nxt;
+	struct deck_node_s *prev;
+	struct deck_node_s *next;
 } deck_node_t;
 
 void sort_deck(deck_node_t **deck);
+int _strcmp(const char *str1, const char *str2);
+char getValue(deck_node_t *card);
+void insertion_kind(deck_node_t **deck);
+void insertion_value(deck_node_t **deck);
 
 #endif /* DECK_H */

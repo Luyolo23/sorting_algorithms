@@ -1,11 +1,5 @@
 #include "deck.h"
 
-int _strcmp(const char *str1, const char *str2);
-char getValue(deck_node_t *card);
-void insertion_kind(deck_node_t **deck);
-void insertion_sort_deck_value(deck_node_t **deck);
-void sort_deck(deck_node_t **deck);
-
 /**
  * _strcmp - Compares two strings.
  * @str1: The first string to be compared.
@@ -103,25 +97,25 @@ void insertion_value(deck_node_t **deck)
 {
 	deck_node_t *iter, *insert, *temp;
 
-	for (iter = (*deck)->nxt; iter != NULL; iter = temp)
+	for (iter = (*deck)->next; iter != NULL; iter = temp)
 	{
-		temp = iter->nxt;
-		insert = iter->pv;
+		temp = iter->next;
+		insert = iter->prev;
 		while (insert != NULL &&
 		       insert->card->kind == iter->card->kind &&
 		       getValue(insert) > getValue(iter))
 		{
-			insert->nxt = iter->nxt;
-			if (iter->nxt != NULL)
-				iter->nxt->pv = insert;
-			iter->pv = insert->pv;
-			iter->nxt = insert;
-			if (insert->pv != NULL)
-				insert->pv->nxt = iter;
+			insert->next = iter->next;
+			if (iter->next != NULL)
+				iter->next->prev = insert;
+			iter->prev = insert->prev;
+			iter->next = insert;
+			if (insert->prev != NULL)
+				insert->prev->next = iter;
 			else
 				*deck = iter;
-			insert->pv = iter;
-			insert = iter->pv;
+			insert->prev = iter;
+			insert = iter->prev;
 		}
 	}
 }
@@ -133,7 +127,7 @@ void insertion_value(deck_node_t **deck)
  */
 void sort_deck(deck_node_t **deck)
 {
-	if (deck == NULL || *deck == NULL || (*deck)->nxt == NULL)
+	if (deck == NULL || *deck == NULL || (*deck)->next == NULL)
 		return;
 
 	insertion_kind(deck);
