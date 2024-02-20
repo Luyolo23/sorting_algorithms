@@ -17,7 +17,7 @@ int get_max(int *array, int size)
 			max_value = array[x];
 	}
 
-	return (max);
+	return (max_value);
 }
 
 /**
