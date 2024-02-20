@@ -8,7 +8,7 @@
  */
 void swap_nodes(listint_t **start, listint_t **first_node, listint_t *second_node)
 {
-	(*first_node)->next = seconde_node->next;
+	(*first_node)->next = second_node->next;
 	if (second_node->next != NULL)
 		second_node->next->prev = *first_node;
 	second_node->prev = (*first_node)->prev;
