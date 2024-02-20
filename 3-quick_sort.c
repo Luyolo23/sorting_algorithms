@@ -66,7 +66,7 @@ void lomuto_sort(int *array, size_t data_size, int left, int right)
 
 	if (right - left > 0)
 	{
-		part = lomuto_p(array, data_size, left, right);
+		pivotIndex = lomuto_p(array, data_size, left, right);
 		lomuto_sort(array, data_size, left, pivotIndex - 1);
 		lomuto_sort(array, data_size, pivotIndex + 1, right);
 	}
