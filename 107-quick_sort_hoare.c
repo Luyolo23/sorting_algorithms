@@ -56,7 +56,7 @@ int hoareP(int *array, size_t size, int lft, int ryt)
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @lft: The starting index of the array partition to order.
- * @ryt: The ending index of the array partition to order. 
+ * @ryt: The ending index of the array partition to order.
  * Description: Uses the Hoare partition scheme.
  */
 void hoareSort(int *array, size_t size, int lft, int ryt)
