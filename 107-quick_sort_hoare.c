@@ -31,8 +31,8 @@ int hoareP(int *array, size_t size, int lft, int ryt)
 {
 	int pivot, over, under;
 
-	pivot = array[right];
-	for (over = left - 1, under = right + 1; over < under;)
+	pivot = array[ryt];
+	for (over = lft - 1, under = ryt + 1; over < under;)
 	{
 		do {
 			over++;
@@ -56,8 +56,7 @@ int hoareP(int *array, size_t size, int lft, int ryt)
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @lft: The starting index of the array partition to order.
- * @ryt: The ending index of the array partition to order.
- *
+ * @ryt: The ending index of the array partition to order. 
  * Description: Uses the Hoare partition scheme.
  */
 void hoareSort(int *array, size_t size, int lft, int ryt)
@@ -77,8 +76,7 @@ void hoareSort(int *array, size_t size, int lft, int ryt)
  *                    order using the quicksort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
- * Description: Uses the Hoare partition scheme. Prints
- * the array after each swap of two elements.
+ * Description: Uses the Hoare partition scheme.
  */
 void quick_sort_hoare(int *array, size_t size)
 {
