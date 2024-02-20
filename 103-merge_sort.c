@@ -39,7 +39,8 @@ void mergeSubarrays(int *subarr, int *buff, size_t leftIndex,
  * @leftIndex: The front index of the subarray.
  * @rightIndex: The back index of the subarray.
  */
-void mergeSortRecursive(int *subarr, int *buff, size_t leftIndex, size_t rightIndex)
+void mergeSortRecursive(int *subarr, int *buff,
+		size_t leftIndex, size_t rightIndex)
 {
 	size_t middleIndex;
 
